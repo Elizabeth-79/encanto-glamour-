@@ -1,0 +1,220 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> Tienda de Maquillaje  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url('https://wallpapers.com/images/featured/maquillaje-rosa-cx8q2py39wzvz5bc.jpg');
+            background-size: cover;
+            background-position: center;
+ color: white;
+            padding: 60px 20px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+  width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+ border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Encanto & Glamour</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00750228161001l.jpg" alt="Correctores de maquillaje">
+        <h2>Correctores de maquillaje</h2>
+        <p><strong>Q85</strong></p>
+        <p>Perfeccionan la piel del rostro y fijan tu maquillaje</p>
+        <button class="boton-compra" onclick="mostrarPopup(,maybeline)">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://tse1.explicit.bing.net/th/id/OIP.o7f_U5spr8Rh6rYbNITO7QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Base de maquillaje">
+        <h2>Base de maquillaje</h2>
+        <p><strong>Q30</strong></p>
+        <p>Tapar granitos, cubrir ojeras, marcar pómulos</p>
+        <button class="boton-compra" onclick="mostrarPopup(El nuevo herald)">Comprar</button>
+  </div>
+
+    <div class="producto">
+        <img src="https://cdn.static.escuelamakeup.com/imagenes/para-que-sirven-los-polvos-bronceadores_905x603.jpg" alt="Polvos de Sol o Bronzer">
+        <h2>Polvos de Sol o Bronzer</h2>
+        <p><strong>Q70</strong></p>
+        <p>fijar la base de maquillaje y en algunos casos dar color</p>
+        <button class="boton-compra" onclick="mostrarPopup(Shimmmer )">Comprar</button>
+    </div>
+<div class="producto">
+        <img src="https://i.blogs.es/52391e/425788_swatch/1024_2000.jpeg" alt="Iluminador">
+        <h2>Iluminador</h2>
+        <p><strong>Q50</strong></p>
+        <p>El iluminador aporta luz al rostro</p>
+        <button class="boton-compra" onclick="mostrarPopup()">Comprar</button>
+    </div>
+<div class="producto">
+        <img src="https://allskinsbeauty.com/wp-content/uploads/2019/02/Tipos-de-desmaquillantes-2.jpg" alt="Desmaquillantes">
+        <h2>Desmaquillantes</h2>
+        <p><strong>Q85</strong></p>
+        <p>Desmaquillarte es clave para evitar granitos, puntos negros y hasta infecciones</p>
+        <button class="boton-compra" onclick="mostrarPopup()">Comprar</button>
+    </div>
+<div class="producto">
+        <img src="https://i.pinimg.com/originals/ee/a8/3d/eea83dc3ea3452480421bc5cfbd16a6d.jpg" alt="Brochas de maquillaje">
+        <h2>Brochas de maquillaje</h2>
+        <p><strong>Q125</strong></p>
+        <p>Para rostro, ojos, labios, cejas, pestañas</p>
+        <button class="boton-compra" onclick="mostrarPopup()">Comprar</button>
+    </div>
+<div class="producto">
+        <img src="https://m.media-amazon.com/images/I/81+AtEVp7fL._AC_SX425_.jpg" alt="Sombras de ojos">
+        <h2>Sombras de ojos</h2>
+        <p><strong>Q65</strong></p>
+        <p>bien aplicadas potencian el color de tus ojos y corrigen su forma</p>
+        <button class="boton-compra" onclick="mostrarPopup()">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50243023587" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:ventas@Maquillaje.com">📧 Correo</a>
+    <a href="tel:+50248749014">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+ function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
